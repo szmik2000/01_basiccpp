@@ -26,6 +26,7 @@ Format for the timetable file:
 public:
 	TimeTableManager() {}
 	bool parseTimeTable();
+	bool writeTimeTable() const;
 	bool getDay(TimeDayMonthYear time);
 private:
 	struct Event

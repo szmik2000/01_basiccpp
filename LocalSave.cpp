@@ -21,7 +21,7 @@ LocalSave::SaveStates LocalSave::Load()
 
     FILE* configFile;
     _wfopen_s(&configFile, g_fullTimeTablePath.c_str(), L"w");
-    if (configFile != NULL)
+    if (configFile)
     {
         fclose(configFile);
         return SaveStates::FOUND_LOADED;
