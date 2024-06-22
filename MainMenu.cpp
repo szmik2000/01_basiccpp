@@ -1,4 +1,5 @@
 #include "MainMenu.h"
+
 #include <iostream>
 
 void MainMenu::OpenMainMenu()
@@ -11,11 +12,12 @@ void MainMenu::OpenMainMenu()
     int chosen;
     std::cin >> chosen;
 
-    MainMenu mainMenu;
     switch (chosen)
     {
+    case 1:
+        mTimeTableManager.parseTimeTable();
     case 2:
-        mainMenu.AddToTimetable();
+        AddToTimetable();
     default:
         break;
     }
@@ -23,5 +25,4 @@ void MainMenu::OpenMainMenu()
 
 void MainMenu::AddToTimetable()
 {
-
 }

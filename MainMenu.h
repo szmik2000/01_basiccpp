@@ -1,11 +1,15 @@
 #pragma once
+
+#include "TimeTableManager.h"
+
 class MainMenu
 {
 public:
-	//MainMenu(){}
-	static void OpenMainMenu();
+	MainMenu(TimeTableManager timeTableManager) : mTimeTableManager(timeTableManager) {}
+	void OpenMainMenu();
 private:
 	void AddToTimetable();
+	TimeTableManager& mTimeTableManager;
 	
 };
 
