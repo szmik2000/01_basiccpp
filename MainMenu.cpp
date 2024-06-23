@@ -9,9 +9,12 @@ void MainMenu::OpenMainMenu()
     while (true) 
     {
         std::cout << "\n\n-----------------------------------------------------\n";
-        std::cout << "\nDo you want to check your timetable? - Press \"1\"\n";
-        std::cout << "Do you want to edit your timetable? - Press \"2\"\n";
-        std::cout << "Exit - Press \"0\"\n";
+        std::cout << "\"1\" - Check your timetable \n";
+        std::cout << "\"2\" - Add new day\n"; //TODO: this can be auto generated
+        std::cout << "\"3\" - Add new event\n";
+        std::cout << "\"4\" - Modify day\n";
+        std::cout << "\"5\" - Modify event\n";
+        std::cout << "\"0\" - Exit\n";
         std::cout << "MAKE YOUR CHOICE!     -   ";
 
         int chosen;

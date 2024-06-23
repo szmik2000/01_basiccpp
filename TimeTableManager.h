@@ -49,6 +49,6 @@ private:
 		std::string date;
 		std::vector<Event> events;
 	};
-	std::vector<Day> days;
+	std::vector<Day> mDays;
 };
 

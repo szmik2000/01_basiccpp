@@ -8,7 +8,7 @@ extern std::wstring g_fullConfigPath;
 
 bool TimeTableManager::parseTimeTable()
 {
-    days.clear();
+    mDays.clear();
     FILE* fp;
     _wfopen_s(&fp, g_fullConfigPath.c_str(), L"r");
     char readBuffer[65536];
@@ -31,14 +31,14 @@ bool TimeTableManager::parseTimeTable()
             event.name = eventJson["name"].GetString();
             day.events.push_back(event);
         }
-        days.push_back(day);
+        mDays.push_back(day);
     }
     return true;
 }
 
 bool TimeTableManager::writeTimeTable() const
 {
-    for (auto day : days)
+    for (auto day : mDays)
     {
         std::cout << "\n\nDATE: " << day.date;
         for (auto event : day.events)
