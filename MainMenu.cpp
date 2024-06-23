@@ -4,7 +4,7 @@
 
 void MainMenu::OpenMainMenu()
 {
-    mTimeTableManager.parseTimeTable();
+    mTimeTableManager.ParseTimeTable();
     std::cout << "Welcome to your sweet time tracking device!\n";
     while (true) 
     {
@@ -25,15 +25,13 @@ void MainMenu::OpenMainMenu()
         case 0:
             return;
         case 1:
-            mTimeTableManager.writeTimeTable();
+            mTimeTableManager.WriteTimeTable();
+            break;
         case 2:
-            AddToTimetable();
+            mTimeTableManager.AddDay();
+            break;
         default:
             break;
         }
     }
-}
-
-void MainMenu::AddToTimetable()
-{
 }
