@@ -30,6 +30,9 @@ void MainMenu::OpenMainMenu()
         case 2:
             mTimeTableManager.AddDay();
             break;
+        case 2:
+            mTimeTableManager.AddEvent();
+            break;
         default:
             break;
         }

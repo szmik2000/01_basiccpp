@@ -133,3 +133,33 @@ void TimeTableManager::WriteDocument(rapidjson::Document& document)
         fclose(fp);
     }
 }
+
+//TODO: this needs to be finised
+bool TimeTableManager::AddEvent()
+{
+    Day newDay;
+    GetDayFromUser(newDay);
+    rapidjson::Document document;
+    ReadDocument(document);
+
+    rapidjson::Document::AllocatorType& allocator = document.GetAllocator();
+    rapidjson::Value dayObject(rapidjson::kObjectType);
+    dayObject.AddMember("date", rapidjson::Value().SetString(newDay.date.c_str(), allocator), allocator);
+
+    rapidjson::Value eventsArray(rapidjson::kArrayType);
+    for (const auto& event : newDay.events)
+    {
+        rapidjson::Value eventObject(rapidjson::kObjectType);
+        eventObject.AddMember("begin", rapidjson::Value().SetString(event.begin.c_str(), allocator), allocator);
+        eventObject.AddMember("end", rapidjson::Value().SetString(event.end.c_str(), allocator), allocator);
+        eventObject.AddMember("name", rapidjson::Value().SetString(event.name.c_str(), allocator), allocator);
+        eventsArray.PushBack(eventObject, allocator);
+    }
+    dayObject.AddMember("events", eventsArray, allocator);
+    document.PushBack(dayObject, allocator);
+
+    WriteDocument(document);
+    mDays.push_back(newDay);
+
+    return true;
+}
