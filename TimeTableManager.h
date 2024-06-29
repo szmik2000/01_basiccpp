@@ -53,6 +53,7 @@ public:
 	bool GetDay(TimeDayMonthYear time);
 	void ReadDocument(rapidjson::Document& document);
 	void WriteDocument(rapidjson::Document& document);
+	bool AddEvent();
 	void GetDayFromUser(Day& aDay);
 	void GetEventFromUser(Event& aEvent);
 private:
